@@ -1,0 +1,81 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "./src/**/*",
+    "./src/**/*.test.ts",
+    "./tests/**/*.mock.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.web.json"
+    }
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "composite": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@mocks/*": [
+        "tests/mocks/*"
+      ],
+      "@renderer/*": [
+        "src/renderer/src/*"
+      ],
+      "@components": [
+        "src/renderer/src/components/index.ts"
+      ],
+      "@components/*": [
+        "src/renderer/src/components/*"
+      ],
+      "@layouts": [
+        "src/renderer/src/layouts/index.ts"
+      ],
+      "@layouts/*": [
+        "src/renderer/src/layouts/*"
+      ],
+      "@store": [
+        "src/renderer/src/store/index.ts"
+      ],
+      "@store/*": [
+        "src/renderer/src/store/*"
+      ],
+      "@database": [
+        "src/database/index.ts"
+      ],
+      "@database/*": [
+        "src/database/*"
+      ],
+      "@lib": [
+        "src/lib/index.ts"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@utilities": [
+        "src/utilities/index.ts"
+      ],
+      "@utilities/*": [
+        "src/utilities/*"
+      ],
+      "typings": [
+        "src/types/index.ts"
+      ],
+      "typings/*": [
+        "src/types/*"
+      ]
+    },
+    "types": [
+      "lokijs",
+      "jest",
+      "node"
+    ]
+  }
+}
